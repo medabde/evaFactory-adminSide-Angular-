@@ -21,12 +21,13 @@ export class EtudiantsComponent implements OnInit {
   }
   handleSuccessfulResponse(response){
     this.etudiants=response;
-    
-    this.etudiants.forEach(etudiant => {
-      console.log(etudiant.name)  
-    });
-    
-    
   }
+
+  deleteEtudiant(etudiant: Etudiant): void {
+    this.httpClientService.deleteEtudiant(etudiant)
+      .subscribe( data => {
+        this.etudiants = this.etudiants.filter(u => u !== etudiant);
+      })
+  };
 
 }

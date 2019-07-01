@@ -22,12 +22,12 @@ export class HttpClientService {
     console.log("test call");
     return this.httpClient.get<Etudiant[]>('http://localhost:8080/etudiants');
   }
-  public deleteEmployee(employee) {
-    return this.httpClient.delete<Etudiant>("http://localhost:8080/etudiants" + "/"+ employee.empId);
+  public deleteEtudiant(etudiant) {
+    return this.httpClient.delete<Etudiant>("http://localhost:8080/etudiants/"+ etudiant.empId);
   }
-  
-  public createEmployee(employee) {
-    return this.httpClient.post<Etudiant>("http://localhost:8080/etudiant", employee);
+
+  public createEtudiant(etudiant) {
+    return this.httpClient.post<Etudiant>("http://localhost:8080/etudiants", etudiant);
   }
-  
+
 }
