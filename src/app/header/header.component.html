@@ -3,9 +3,13 @@
     <div><a routerLink="/etudiants" class="navbar-brand">Eva Factory</a></div>
     
     <ul class="navbar-nav">
-        <li><a  routerLink="/etudiants" class="nav-link">View Etudiants</a></li>
-        <li><a  routerLink="/addetudiant" class="nav-link">Add New Etudiant</a></li>
-    
+        <!-- <li><a  routerLink="/etudiants" class="nav-link">View Etudiants</a></li>
+        <li><a  routerLink="/addetudiant" class="nav-link">Add New Etudiant</a></li> -->
+        <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/etudiants" class="nav-link">View Etudiant</a></li>
+        <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/addetudiant" class="nav-link">Add Etudiant</a></li>
+        <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li>
+        <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">LogOut</a></li>
+
     </ul>
     
     </nav>
