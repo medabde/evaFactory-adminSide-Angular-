@@ -1,19 +1,52 @@
 
-
-<div class="col-md-6">
-    <table class="table table-striped">
-        <thead></thead>
-        <tr>
-        <th>name</th>
-        <th>designation</th>
+<table class="table table-striped">
+    <thead></thead>
+    <tr>
+    <th>id</th>
+    <th>name</th>
+    <th>mail</th>
+    <th>phone number</th>
+    <th>num of courses</th>
+    <th>prix(dh)</th>
+    </tr>
+    <tbody>
+        <tr *ngFor="let etudiant of etudiants">
+            <td>{{etudiant.name}}</td>
+            <td>{{etudiant.designation}}</td>
+            <td><button class="btn btn-danger" (click)="deleteEtudiant(etudiant)"> Delete Etudiant</button></td>
         </tr>
-        <tbody>
-            <tr *ngFor="let etudiant of etudiants">
-                <td>{{etudiant.name}}</td>
-                <td>{{etudiant.designation}}</td>
-                <td><button class="btn btn-danger" (click)="deleteEtudiant(etudiant)"> Delete Etudiant</button></td>
-            </tr>
-        </tbody>
-    </table>
-</div>
 
+        <tr >
+            <td>5</td>
+            <td>mohamed abdellaoui</td>
+            <td>medabde@gmail.com</td>
+            <td>0610507087</td>
+            <td>1</td>
+            <td>750</td>
+            <td><a routerLink="/editetudiant" class="btn btn-success">Edit</a></td>
+            <td><button class="btn btn-danger" (click)="deleteEtudiant(etudiant)">Delete</button></td>
+        </tr>
+
+        <tr >
+            <td>1</td>
+            <td>3wita abdellaoui</td>
+            <td>brhm@gmail.com</td>
+            <td>061054457</td>
+            <td>2</td>
+            <td>900</td>
+            <td><button class="btn btn-success">Edit</button></td>
+            <td><button class="btn btn-danger">Delete</button></td>
+        </tr>
+        <tr >
+            <td>2</td>
+            <td>brhn ladla</td>
+            <td>chi mail@gmail.com</td>
+            <td>06105077</td>
+            <td>5</td>
+            <td>1500</td>
+            <td><button class="btn btn-success">Edit</button></td>
+            <td><button class="btn btn-danger">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
+<a style="width: 100%" class="btn btn-success" routerLink="/addetudiant" >AJOUTER ETUDIANT</a>

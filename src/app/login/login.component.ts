@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../service/authentication.service';
 import { Router } from '@angular/router';
-
+import $ from 'jquery'
 
 @Component({
   selector: 'app-login',
@@ -24,8 +24,12 @@ export class LoginComponent implements OnInit {
     ) {
       this.router.navigate(['/etudiants'])
       this.invalidLogin = false
-    } else
+    } else{
+      $('#pass').val("")
+      $('#email').val("")
       this.invalidLogin = true
+      alert("email or password incorrect")
+    }
   }
 
 }

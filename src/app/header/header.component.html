@@ -1,17 +1,20 @@
-<header>
-    <nav class ="navbar navbar-expand-md navbar-dark bg-dark">
-    <div><a routerLink="/etudiants" class="navbar-brand">Eva Factory</a></div>
-    
-    <ul class="navbar-nav">
-        <!-- <li><a  routerLink="/etudiants" class="nav-link">View Etudiants</a></li>
-        <li><a  routerLink="/addetudiant" class="nav-link">Add New Etudiant</a></li> -->
-        <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/etudiants" class="nav-link">View Etudiant</a></li>
-        <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/addetudiant" class="nav-link">Add Etudiant</a></li>
-        <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li>
-        <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">LogOut</a></li>
-
-    </ul>
-    
-    </nav>
-        
-</header>
+<nav *ngIf="loginService.isUserLoggedIn()" class="navbar navbar-expand-lg navbar-dark indigo bg-dark">
+    <a class="navbar-brand" routerLink="/etudiants">Eva Factory</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"  *ngIf="loginService.isUserLoggedIn()">
+      <span class="navbar-toggler-icon" ></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="loginService.isUserLoggedIn()" routerLink="/etudiants">Etudiants</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" *ngIf="loginService.isUserLoggedIn()" routerLink="/addetudiant">Ajouter Etudiant</a>
+        </li> -->
+      </ul>
+      <span class="navbar-text white-text">
+        <button class="btn btn-danger" *ngIf="loginService.isUserLoggedIn()" routerLink="/logout"> Log-out</button>
+      </span>
+    </div>
+  </nav>

@@ -3,12 +3,11 @@ import { HttpClientService, Etudiant} from '../service/http-client.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-add-etudiant',
-  templateUrl: './add-etudiant.component.html',
-  styleUrls: ['./add-etudiant.component.css']
+  selector: 'app-edit-etudiant',
+  templateUrl: './edit-etudiant.component.html',
+  styleUrls: ['./edit-etudiant.component.css']
 })
-export class AddEtudiantComponent implements OnInit {
-
+export class EditEtudiantComponent implements OnInit {
   user : Etudiant =new Etudiant("","","","")
 
   constructor(private httpClientService: HttpClientService,private router:Router) { }
@@ -16,11 +15,11 @@ export class AddEtudiantComponent implements OnInit {
   ngOnInit() {
   }
 
-  createEtudiant(): void {
+  editEtudiant(): void {
     this.router.navigate(['etudiants']);
-    this.httpClientService.createEtudiant(this.user).subscribe( data => {
-      alert("Employee created successfully.");
+    this.httpClientService.editEtudiant(this.user).subscribe( data => {
+      alert("etudiant edited successfully.");
     });
   }
-
 }
+

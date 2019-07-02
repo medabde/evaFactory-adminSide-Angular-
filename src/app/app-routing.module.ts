@@ -5,12 +5,14 @@ import {AddEtudiantComponent} from './add-etudiant/add-etudiant.component'
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import {AuthGaurdService} from './service/auth-gaurd.service'
+import {EditEtudiantComponent} from './edit-etudiant/edit-etudiant.component'
 
 const routes: Routes = [
   { path:'etudiants', component: EtudiantsComponent,canActivate:[AuthGaurdService]},
   { path:'addetudiant', component: AddEtudiantComponent,canActivate:[AuthGaurdService]},
   { path: 'login', component: LoginComponent},
-  { path: 'logout', component: LogoutComponent,canActivate:[AuthGaurdService]}
+  { path: 'logout', component: LogoutComponent,canActivate:[AuthGaurdService]},
+  { path: 'editetudiant', component: EditEtudiantComponent,canActivate:[AuthGaurdService]}
 ];
 
 @NgModule({

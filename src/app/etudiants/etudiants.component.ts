@@ -24,10 +24,11 @@ export class EtudiantsComponent implements OnInit {
   }
 
   deleteEtudiant(etudiant: Etudiant): void {
-    this.httpClientService.deleteEtudiant(etudiant)
+    if (confirm('Are you sure you want to DELETE etudiant .. with database?')) {
+      this.httpClientService.deleteEtudiant(etudiant)
       .subscribe( data => {
         this.etudiants = this.etudiants.filter(u => u !== etudiant);
-      })
+      })  
+    }
   };
-
 }

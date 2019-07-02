@@ -7,9 +7,10 @@ import { EtudiantsComponent } from './etudiants/etudiants.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddEtudiantComponent } from './add-etudiant/add-etudiant.component';
 import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+//import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
+import { EditEtudiantComponent } from './edit-etudiant/edit-etudiant.component';
 
 @NgModule({
   declarations: [
@@ -17,9 +18,10 @@ import { LogoutComponent } from './logout/logout.component';
     EtudiantsComponent,
     AddEtudiantComponent,
     HeaderComponent,
-    FooterComponent,
+    //FooterComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    EditEtudiantComponent
   ],
   imports: [
     BrowserModule,

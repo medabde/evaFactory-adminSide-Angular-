@@ -30,4 +30,8 @@ export class HttpClientService {
     return this.httpClient.post<Etudiant>("http://localhost:8080/etudiants", etudiant);
   }
 
+  public editEtudiant(etudiant) {
+    return this.httpClient.post<Etudiant>("http://localhost:8080/etudiants/"+etudiant.empId,etudiant)
+  }
+
 }
