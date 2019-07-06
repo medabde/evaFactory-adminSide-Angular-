@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClientService, Etudiant} from '../service/http-client.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-edit-etudiant',
@@ -8,17 +8,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./edit-etudiant.component.css']
 })
 export class EditEtudiantComponent implements OnInit {
-  user : Etudiant =new Etudiant("","","","")
+  etudiants:Etudiant[];
+  user : Etudiant=new Etudiant(+this.route.snapshot.paramMap.get('id'),"","","","","","")
 
-  constructor(private httpClientService: HttpClientService,private router:Router) { }
+  constructor(private httpClientService: HttpClientService,private router:Router,private route:ActivatedRoute) { }
 
   ngOnInit() {
+    this.httpClientService.getEtudiants().subscribe(
+      response =>this.etudiants=response
+     );
   }
 
   editEtudiant(): void {
-    this.router.navigate(['etudiants']);
-    this.httpClientService.editEtudiant(this.user).subscribe( data => {
-      alert("etudiant edited successfully.");
+    this.httpClientService.createEtudiant(this.user).subscribe( data => {
+      this.router.navigate(['etudiants']);
     });
   }
 }

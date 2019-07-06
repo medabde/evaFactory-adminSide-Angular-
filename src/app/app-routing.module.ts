@@ -12,7 +12,7 @@ const routes: Routes = [
   { path:'addetudiant', component: AddEtudiantComponent,canActivate:[AuthGaurdService]},
   { path: 'login', component: LoginComponent},
   { path: 'logout', component: LogoutComponent,canActivate:[AuthGaurdService]},
-  { path: 'editetudiant', component: EditEtudiantComponent,canActivate:[AuthGaurdService]}
+  { path: 'editetudiant/:id', component: EditEtudiantComponent,canActivate:[AuthGaurdService]}
 ];
 
 @NgModule({

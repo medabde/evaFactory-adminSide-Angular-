@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClientService, Etudiant } from '../service/http-client.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-etudiants',
@@ -10,7 +11,7 @@ export class EtudiantsComponent implements OnInit {
 
   etudiants:Etudiant[];
 
-  constructor(
+  constructor(private router:Router,
     private httpClientService:HttpClientService
   ) {}
 
@@ -23,12 +24,13 @@ export class EtudiantsComponent implements OnInit {
     this.etudiants=response;
   }
 
-  deleteEtudiant(etudiant: Etudiant): void {
-    if (confirm('Are you sure you want to DELETE etudiant .. with database?')) {
-      this.httpClientService.deleteEtudiant(etudiant)
-      .subscribe( data => {
-        this.etudiants = this.etudiants.filter(u => u !== etudiant);
-      })  
-    }
+  supetudiant(etudiant: Etudiant): void {
+    this.httpClientService.deleteEtudiant(etudiant.id).subscribe( data => {
+      
+      this.etudiants = this.etudiants.filter(u => u !== etudiant);
+    })  
   };
+  editEtudiant(etudiant: Etudiant):void{
+    this.router.navigate(["/editetudiant",etudiant.id])
+  }
 }

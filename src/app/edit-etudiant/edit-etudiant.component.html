@@ -1,19 +1,36 @@
-<h2 class="text-center">Modifier ETUDIANT !</h2>
+<h2 class="text-center">Modifier ETUDIANT qui son id est : {{this.route.snapshot.paramMap.get('id')}} !</h2>
 <form>
-    <div class="form-group">
-    <label for="name">Name:</label>
-    <input type="name" [(ngModel)]="user.name" placeholder="Name" name="name" class="form-control" id="name">
-    </div>
-
-    <div class="form-group">
-    <label for="designation">Designation:</label>
-    <input [(ngModel)]="user.designation" placeholder="Designation" name="designation" class="form-control" id="designation">
-    </div>
-
-    <div class="form-group">
-    <label for="empId">Etudiant Id</label>
-    <input [(ngModel)]="user.empId" placeholder="Etudiant Id" name="Etudiant Id" class="form-control" id="employeeid">
-    </div>
+        <div class="form-group">
+            <label for="CIN">CIN:</label>
+            <input type="name" [(ngModel)]="user.cin" placeholder="CIN" name="CIN" class="form-control" id="name">
+        </div>
+        
+        <div class="form-group">
+            <label for="name">Nom:</label>
+            <input type="name" [(ngModel)]="user.nom" placeholder="Nom" name="name" class="form-control" id="name">
+        </div>
+    
+        <div class="form-group">
+            <label for="prenom">Prenom:</label>
+            <input type="name" [(ngModel)]="user.prenom" placeholder="prenom" name="prenom" class="form-control" id="name">
+        </div>
+    
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input [(ngModel)]="user.email" placeholder="Email" name="email" class="form-control" id="designation">
+        </div>
+            
+        <div class="form-group">
+            <label for="passwd">password:</label>
+            <input [(ngModel)]="user.passwd" placeholder="passwd" name="passwd" class="form-control" id="designation">
+        </div>
+            
+    
+        <div class="form-group">
+            <label for="telephone">telephone:</label>
+            <input [(ngModel)]="user.num" placeholder="numero" name="numero" class="form-control" id="designation">
+        </div>
 
     <button class="btn btn-success" (click)="editEtudiant()">Modifier</button>    
 </form>
+<!-- {{this.route.snapshot.paramMap.get('id')}} -->

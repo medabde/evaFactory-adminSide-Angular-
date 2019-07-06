@@ -4,10 +4,13 @@ import {HttpClient} from '@angular/common/http'
 
 export class Etudiant{
   constructor(
-    public empId:string,
-    public name:string,
-    public designation:string,
-    public salary:string,
+    public id:number,
+    public cin:string,
+    public nom:string,
+    public prenom:string,
+    public num:string,
+    public email:string,
+    public passwd:string
   ) {}
 }
 
@@ -19,11 +22,10 @@ export class HttpClientService {
   constructor(private httpClient:HttpClient) { 
   }
   getEtudiants(){
-    console.log("test call");
     return this.httpClient.get<Etudiant[]>('http://localhost:8080/etudiants');
   }
-  public deleteEtudiant(etudiant) {
-    return this.httpClient.delete<Etudiant>("http://localhost:8080/etudiants/"+ etudiant.empId);
+  public deleteEtudiant(id) {
+    return this.httpClient.get<Etudiant>("http://localhost:8080/etudiants/delete/"+id);
   }
 
   public createEtudiant(etudiant) {
@@ -31,7 +33,6 @@ export class HttpClientService {
   }
 
   public editEtudiant(etudiant) {
-    return this.httpClient.post<Etudiant>("http://localhost:8080/etudiants/"+etudiant.empId,etudiant)
+    return this.httpClient.get<Etudiant>("http://localhost:8080//etudiants/edit/",etudiant)
   }
-
 }

@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AddEtudiantComponent implements OnInit {
 
-  user : Etudiant =new Etudiant("","","","")
+  user : Etudiant =new Etudiant(null,"","","","","","")
 
   constructor(private httpClientService: HttpClientService,private router:Router) { }
 
@@ -17,9 +17,8 @@ export class AddEtudiantComponent implements OnInit {
   }
 
   createEtudiant(): void {
-    this.router.navigate(['etudiants']);
     this.httpClientService.createEtudiant(this.user).subscribe( data => {
-      alert("Employee created successfully.");
+      this.router.navigate(['etudiants']);
     });
   }
 
