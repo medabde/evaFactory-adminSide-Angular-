@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClientService, Etudiant } from '../service/http-client.service';
+import { HttpClientService, Etudiant } from '../../service/http-client.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -31,6 +31,10 @@ export class EtudiantsComponent implements OnInit {
     })  
   };
   editEtudiant(etudiant: Etudiant):void{
-    this.router.navigate(["/editetudiant",etudiant.id])
+    this.router.navigate(["/editetudiant",{id:etudiant.id,cin:etudiant.cin,
+      nom:etudiant.nom,prenom:etudiant.prenom,
+      num:etudiant.num,email:etudiant.email,
+      passwd:etudiant.passwd
+    }])
   }
 }
