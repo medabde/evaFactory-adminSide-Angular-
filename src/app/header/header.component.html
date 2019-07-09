@@ -1,5 +1,5 @@
 <nav *ngIf="loginService.isUserLoggedIn()" class="navbar navbar-expand-lg navbar-dark indigo bg-dark">
-    <a class="navbar-brand" routerLink="/etudiants">Eva Factory</a>
+    <a class="navbar-brand" routerLink="/home">Eva Factory</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
       aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"  *ngIf="loginService.isUserLoggedIn()">
       <span class="navbar-toggler-icon" ></span>
@@ -9,9 +9,9 @@
         <li class="nav-item">
           <a class="nav-link" *ngIf="loginService.isUserLoggedIn()" routerLink="/etudiants">Etudiants</a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" *ngIf="loginService.isUserLoggedIn()" routerLink="/addetudiant">Ajouter Etudiant</a>
-        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="loginService.isUserLoggedIn()" routerLink="/formations">Formations</a>
+        </li>
       </ul>
       <span class="navbar-text white-text">
         <button class="btn btn-danger" *ngIf="loginService.isUserLoggedIn()" routerLink="/logout"> Log-out</button>

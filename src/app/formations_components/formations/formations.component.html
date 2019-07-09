@@ -1,0 +1,22 @@
+<table class="table table-striped">
+    <thead></thead>
+    <tr>
+    <th>Id</th>
+    <th>Nom</th>
+    <th>Prof</th>
+    <th>Prix</th>
+    <th></th>
+    <th></th>
+    </tr>
+    <tbody>
+        <tr *ngFor="let formation of formations">
+            <td>{{formation.id}}</td>
+            <td>{{formation.nom}}</td>
+            <td>{{formation.prof}}</td>
+            <td>{{formation.prix}}</td>
+            <td><button class="btn btn-success" (click)="editFormation(formation)">Edit</button></td>
+            <td><button class="btn btn-danger" (click)="supFormation(formation)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
+<a style="width: 100%" class="btn btn-success" routerLink="/addformation" >AJOUTER FORMATION</a>

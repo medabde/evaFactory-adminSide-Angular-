@@ -8,7 +8,6 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./edit-etudiant.component.css']
 })
 export class EditEtudiantComponent implements OnInit {
-  etudiants:Etudiant[];
   user : Etudiant=new Etudiant(+this.route.snapshot.paramMap.get('id'),
   this.route.snapshot.paramMap.get('cin'),
   this.route.snapshot.paramMap.get('nom'),
@@ -20,9 +19,6 @@ export class EditEtudiantComponent implements OnInit {
   constructor(private httpClientService: HttpClientService,private router:Router,private route:ActivatedRoute) { }
 
   ngOnInit() {
-    this.httpClientService.getEtudiants().subscribe(
-      response =>this.etudiants=response
-     );
   }
 
   editEtudiant(): void {

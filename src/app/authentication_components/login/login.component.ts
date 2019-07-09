@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   checkLogin() {
     if (this.loginservice.authenticate(this.username, this.password)
     ) {
-      this.router.navigate(['/etudiants'])
+      this.router.navigate(['/home'])
       this.invalidLogin = false
     } else{
       $('#pass').val("")

@@ -10,6 +10,10 @@ import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './authentication_components/login/login.component';
 import { LogoutComponent } from './authentication_components/logout/logout.component';
 import { EditEtudiantComponent } from './etudiants_components/edit-etudiant/edit-etudiant.component';
+import { FormationsComponent } from './formations_components/formations/formations.component';
+import { AddFormationComponent } from './formations_components/add-formation/add-formation.component';
+import { EditFormationComponent } from './formations_components/edit-formation/edit-formation.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,11 @@ import { EditEtudiantComponent } from './etudiants_components/edit-etudiant/edit
     HeaderComponent,
     LoginComponent,
     LogoutComponent,
-    EditEtudiantComponent
+    EditEtudiantComponent,
+    FormationsComponent,
+    AddFormationComponent,
+    EditFormationComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

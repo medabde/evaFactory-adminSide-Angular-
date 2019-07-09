@@ -1,0 +1,18 @@
+<h2 class="text-center">Modifier Formation qui y'a l'id : {{this.route.snapshot.paramMap.get('id')}} !</h2>
+<form>
+        <div class="form-group">
+            <label for="name">Nom:</label>
+            <input type="name" [(ngModel)]="formation.nom" placeholder="Nom" name="name" class="form-control" id="name">
+        </div>
+    
+        <div class="form-group">
+            <label for="prof">Prof:</label>
+            <input type="name" [(ngModel)]="formation.prof" placeholder="prof" name="prenom" class="form-control" id="name">
+        </div>
+    
+        <div class="form-group">
+            <label for="prix">Prix:</label>
+            <input [(ngModel)]="formation.prix" placeholder="Prix" name="Prix" class="form-control" id="designation">
+        </div>
+    <button class="btn btn-success" (click)="editFormation()">Modifier</button>    
+</form>

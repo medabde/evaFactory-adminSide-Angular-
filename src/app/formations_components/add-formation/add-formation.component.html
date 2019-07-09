@@ -1,0 +1,18 @@
+<h2 class="text-center">AJOUTER FORMATION !</h2>
+<form>
+    <div class="form-group">
+        <label for="name">Nom de formation:</label>
+        <input type="name" [(ngModel)]="formation.nom" placeholder="Nom" name="name" class="form-control" id="name">
+    </div>
+
+    <div class="form-group">
+        <label for="prenom">Prof:</label>
+        <input type="name" [(ngModel)]="formation.prof" placeholder="prof" name="prenom" class="form-control" id="name">
+    </div>
+
+    <div class="form-group">
+        <label for="email">Prix:</label>
+        <input [(ngModel)]="formation.prix" placeholder="prix" name="email" class="form-control" id="designation">
+    </div>
+    <button class="btn btn-success" (click)="createFormation()">Create</button>    
+</form>
